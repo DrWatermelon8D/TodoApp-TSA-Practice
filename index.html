@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ToDo List</h1>
+        <form hx-post="/task" hx-target="#greeting-container">
+            <input type="text" id="task" name="task" placeholder="Task Name">
+            <button type="submit">Save</button>
+        </form>
+        <div id="greeting-container"></div>
+</body>
+</html>
