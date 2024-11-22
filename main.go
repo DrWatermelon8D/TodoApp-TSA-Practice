@@ -27,27 +27,15 @@ func homeHandle(writer http.ResponseWriter, req *http.Request) {
 }
 
 func taskHandle(writer http.ResponseWriter, req *http.Request) {
-	writer.Header().Set("Content-Type", "text/html")
+	writer.Header().Set("Content-Type", "button/html")
 
 	task := req.FormValue("task")
 
-	var location int
-
 	if task != "" {
-		for i := 0; i < len(tasks); i++ {
-			if tasks[i] == "" {
-				tasks[i] = task
-				location = i
-				break
-			}
-		}
+		newTask := fmt.Sprintf("<button type=submit>%s</button>", task)
 
-	} else {
-		location = 0
+		writer.Write([]byte(newTask))
+		writer.Write([]byte("<p></p>"))
 	}
-
-	newTask := fmt.Sprintf("<p id='greeting'>%s, %s!</p>")
-
-	writer.Write([]byte(newTask))
 
 }

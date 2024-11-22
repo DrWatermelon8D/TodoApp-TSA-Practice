@@ -8,10 +8,10 @@
 </head>
 <body>
     <h1>ToDo List</h1>
-        <form hx-post="/task" hx-target="#greeting-container">
+        <form hx-post="/task" hx-target="#task-container" hx-swap="beforeend">
             <input type="text" id="task" name="task" placeholder="Task Name">
             <button type="submit">Save</button>
         </form>
-        <div id="greeting-container"></div>
+        <div id="task-container"></div>
 </body>
 </html>
